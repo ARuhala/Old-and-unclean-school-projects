@@ -1,4 +1,0 @@
-clear
-read "example-data.txt"
-all_roads
-shortest_route Hki Ol
