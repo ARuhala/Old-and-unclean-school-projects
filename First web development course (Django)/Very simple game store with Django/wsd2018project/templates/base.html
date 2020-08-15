@@ -1,0 +1,22 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  {% block styles %}
+  {% endblock %}
+  <title>{% block title %}Base{% endblock %}</title>
+</head>
+<body>
+  <div>
+    <!-- We can add a header or something to here later -->
+    <!--<a href="/">
+      <img src="/static/ohmyheader.jpg" alt="Oh my god they killed Kenny joke as spurdo comic" style="width:300px;border:0;">
+    </a>-->
+  </div>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

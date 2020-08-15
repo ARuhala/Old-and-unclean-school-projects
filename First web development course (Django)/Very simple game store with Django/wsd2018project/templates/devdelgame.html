@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Remove game{% endblock %}
+
+{% block content %}
+  <h2>Remove game</h2>
+  <p>This service deletes all instances of your game from the database</p>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Remove game</button>
+  </form>
+
+
+  <p><a href="/">Start menu</a></p>
+{% endblock %}

@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Gameslist{% endblock %}
+
+
+{% block content %}
+<h2> Below you may find your games listed and who has loaned them via our services</h2>
+<table>
+<tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>URL</th>
+    <th>LOANER</th>
+    <th>PRICE</th>
+</tr>
+{% for game in games %}
+<tr>
+    <td>{{ game.id }}</td>
+    <td>{{ game.name }}</td>
+    <td>{{ game.gameurl }}</td>
+    <td>{{ game.loaner }}</td>
+    <td>{{ game.price }}</td>
+</tr>
+{% endfor %}
+</table>
+  <p><a href="/">Start menu</a></p>
+{% endblock %}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pitkä päivä</title>
+  <meta charset="utf-8"/>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style>
+    #pistetilanne {
+      float: right;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div id=pistetilanne>Pisteet: <span  id="pisteet">0</span></div>
+  <h2>Jalluxin pitkä päivä peli</h2>
+
+  <p id="text">Jos näet tämän niin jokin meni vikaan</p>
+
+  <div>
+    <button id="aloita">Aloita peli</button>
+
+    <button id="kylla" class="valinta">Kyllä</button>
+    <button id="ei" class="valinta">Ei</button>
+
+    <button id="jatka">Jatka pelaamista</button>
+    <button id="uusi">Uusi peli</button>
+  </div>
+  <br>
+  <div>
+    <button id="laheta">Lähetä pisteet</button>
+    <br>
+    <button id="lataa">Lataa</button>
+    <button id="tallenna">Tallenna</button>
+  </div>
+  <script>
+
+  $(document).ready( function() {
+    "use strict";
+
+
+    // GAME LOGIC
+
+    alusta();
+
+    var points = 0;
+
+    function alusta() {
+      piilotaKyllaEi();
+      $("#jatka").hide();
+      $("#uusi").hide();
+      $("#aloita").show();
+      $("#text").text('Aloita peli painamalla \"Aloita peli\"');
+    }
+
+    function piilotaKyllaEi() {
+      $("#kylla").hide();
+      $("#ei").hide();
+    }
+
+    function naytaKyllaEi() {
+      $("#kylla").show();
+      $("#ei").show();
+    };
+
+    function lisaaPisteita() {
+      ++points;
+      $("#pisteet").text(points);
+    };
+
+    $("#aloita").click(function() {
+      $("#text").text("Onko Jalluxilla tänään pitkä päivä?");
+      $("#aloita").hide();
+      naytaKyllaEi();
+    });
+
+    $("#kylla").click(function() {
+      $("#text").text("Voitit pelin");
+      piilotaKyllaEi();
+      $("#jatka").show();
+      $("#uusi").show();
+      lisaaPisteita();
+    });
+
+    $("#ei").click(function() {
+      $("#text").text("Hävisit pelin");
+      piilotaKyllaEi();
+      $("#jatka").show();
+      $("#uusi").show();
+    });
+
+    $("#jatka").click(function() {
+      alusta();
+    });
+
+    $("#uusi").click(function() {
+      alusta();
+      points = 0;
+      $("#pisteet").text(points);
+    });
+
+
+    // MESSAGE SYSTEM
+
+
+    $("#laheta").click( function () {
+      var msg = {
+        "messageType": "SCORE",
+        "score": points
+      };
+      window.parent.postMessage(msg, "*");
+    });
+
+
+    $("#tallenna").click( function () {
+      var msg = {
+        "messageType": "SAVE",
+        "gameState": {
+          "score": points
+        }
+      };
+      window.parent.postMessage(msg, "*");
+    });
+
+
+    $("#lataa").click( function () {
+      var msg = {
+        "messageType": "LOAD_REQUEST",
+      };
+      window.parent.postMessage(msg, "*");
+    });
+
+    window.addEventListener("message", function(evt) {
+      if(evt.data.messageType === "LOAD") {
+        points = evt.data.gameState.score;
+        $("#pisteet").text(points);
+      } else if (evt.data.messageType === "ERROR") {
+        alert(evt.data.info);
+      }
+    });
+
+  });
+  </script>
+
+</body>
+</html>

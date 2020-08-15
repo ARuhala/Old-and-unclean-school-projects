@@ -1,0 +1,19 @@
+<!-- templates/devaddgame.html -->
+{% extends 'base.html' %}
+
+{% block title %}Add game{% endblock %}
+
+{% block content %}
+  <h2>Add game</h2>
+<p> This page is used to add new games and update your old ones</p>
+<p> To update your already existing games name or price, simply overwrite it by adding a new game with the same url</p>
+<p> To remove the game from people who have already loaned it, use our Remove Game services</p>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add game</button>
+  </form>
+
+
+  <p><a href="/">Start menu</a></p>
+{% endblock %}

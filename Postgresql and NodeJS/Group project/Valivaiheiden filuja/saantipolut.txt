@@ -1,0 +1,54 @@
+Nimi:		Kuukausiraportin laatiminen
+Suorittaja:	Mainosmyyj‰ tai Taloussihteeri
+Kuvaus:		K‰ytt‰j‰ hakee kuukausiraportin tiedot valitsemalla halutun kuukauden ja vuoden.
+		K‰ytt‰j‰ valitsee "Hae tiedot". N‰kyviin tuodaan aktiivisena olevan mainostajan kukin
+		mainoskampanja ja niist‰ kunkin mainoksen esitysaika, mainoksen pituus ja kyseisen mainoksen
+		hinta. N‰kym‰ss‰ on yhteenveto, jossa kerrotaan esitysten toistom‰‰r‰, kokonaispituus ja
+		kokonaishinta. K‰ytt‰j‰ hyv‰ksyy raportin valitsemalla "l‰het‰ raportti", mink‰ j‰lkeen j‰rjestelm‰
+		l‰hett‰‰ raportin automaattisesti s‰hkˆpostitse mainostajalle.
+Poikkeukset:	Mainostajalla ei ole
+		esitettyj‰ mainoksia hakuehtona annetun kuukauden aikana.
+Lopputulos:	Raportti l‰hetet‰‰n j‰rjestelm‰n toimesta s‰hkˆpostitse mainostajalle.
+Mainostaja ----------> Mainoskampanja ----------> Mainos ----------> Mainosn‰ytˆt
+		(*)			(*)			(*)
+
+
+
+
+Nimi:		Laskun laatiminen
+Suorittaja:	Taloussihteeri
+Kuvaus:		K‰ytt‰j‰lle n‰ytet‰‰n lasku, joka sis‰lt‰‰ koosteen mainoskampanjasta ja siin‰ esitetyist‰
+		mainoksista (kts. esimerkki alla). K‰ytt‰j‰ l‰hett‰‰ laskun mainostajalle valitsemalla "l‰het‰".
+Poikkeukset:	Mainoskampanja k‰ynniss‰
+Lopputulos:	Lasku l‰hetet‰‰n j‰rjestelm‰n toimesta s‰hkˆpostitse mainostajalle.
+Mainostaja ----------> Mainoskampanja ----------> Mainos ----------> Mainosn‰yttˆ
+		(*)			(*)			(*)
+
+Lasku ----------> Mainoskapanja ----------> Mainostaja
+				----------> Mainos ----------> Mainosn‰yttˆ
+				   (*)			(*)
+
+Nimi:		Kappaleen mainosten valinta
+Suorittaja:	Asiakas
+Kuvaus:		Asiakas kuuntelee kappaleen, ohjelmisto valitsee kappaleeseen ja asiakkaaseen sopivan mainoksen
+		mainosprofiilin perusteella.
+Poikkeukset:	
+Lopputulos:	Asiakkaalle valitaan yksi sopiva mainos.
+Mainosprofiili 	----------> Maa						Maa <---------------	Asiakas	
+		   (*) 	
+		----------> Paikkakunta					Paikkakunta <-------
+		   (*) 	
+		----------> Genre				Genre <------Kappale <------
+		   (*) 								   (Kuuntelee)
+		----------> Kappale					      Kappale <------
+		   (*) 	
+		----------> Esitt‰j‰				Esitt‰j‰ <------Kappale <----
+		   (*) 	
+		----------> L‰hetysaika
+		   (*) 	
+		----------> Sukupuoli					Sukupuoli <----------
+		----------> Alkuik‰					Ik‰ <----------------
+		----------> Loppuik‰
+
+						T‰sm‰‰vist‰ Mainosprofiileista valitaan yksi mainos
+

@@ -1,0 +1,28 @@
+html
+  head
+    title= title
+ 
+  body
+    h1= title
+  
+  p= message
+
+  //- Print error message
+  if error  
+    p #{error}
+
+  //- Print the results as a html table by iterating the query results.
+  else if result 
+    br
+    table
+      thead
+        tr
+          //- First print field names as table headers.
+          each field in result.fields
+            th: p= field.name
+      tbody
+        //- Then print values in the resulting rows.
+        each row in result.rows
+          tr
+            each value in row
+              td: p= value

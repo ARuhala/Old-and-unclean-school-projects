@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Gameslist{% endblock %}
+
+
+{% block content %}
+<h2> Below you may find all the games you have loaned</h2>
+<table>
+<tr>
+    <th>NAME</th>
+    <th>ID</th>
+</tr>
+{% for game in games %}
+<tr>
+    <td>{{ game.name }}</td>
+    <td>{{ game.id }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

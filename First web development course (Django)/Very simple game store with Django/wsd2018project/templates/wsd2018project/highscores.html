@@ -1,0 +1,69 @@
+
+{% extends 'base.html' %}
+
+{% block title %}High scores{% endblock %}
+
+{% block content %}
+<h2> Highscores</h2>
+{% for highscore in highscores %}
+<table>
+<h3>{{ highscore.name }}</h3>
+<tr>
+    <th>POSITION</th>
+    <th>USERNAME</th>
+    <th>SCORE</th>
+</tr>
+<tr>
+    <td>1.</td>
+    <td>{{ highscore.username1 }}</td>
+    <td>{{ highscore.score1 }}</td>
+</tr>
+<tr>
+    <td>2.</td>
+    <td>{{ highscore.username2 }}</td>
+    <td>{{ highscore.score2 }}</td>
+</tr>
+<tr>
+    <td>3.</td>
+    <td>{{ highscore.username3 }}</td>
+    <td>{{ highscore.score3 }}</td>
+</tr>
+<tr>
+    <td>4.</td>
+    <td>{{ highscore.username4 }}</td>
+    <td>{{ highscore.score4 }}</td>
+</tr>
+<tr>
+    <td>5.</td>
+    <td>{{ highscore.username5 }}</td>
+    <td>{{ highscore.score5 }}</td>
+</tr>
+<tr>
+    <td>6.</td>
+    <td>{{ highscore.username6 }}</td>
+    <td>{{ highscore.score6 }}</td>
+</tr>
+<tr>
+    <td>7.</td>
+    <td>{{ highscore.username7 }}</td>
+    <td>{{ highscore.score7 }}</td>
+</tr>
+<tr>
+    <td>8.</td>
+    <td>{{ highscore.username8 }}</td>
+    <td>{{ highscore.score8 }}</td>
+</tr>
+<tr>
+    <td>9.</td>
+    <td>{{ highscore.username9 }}</td>
+    <td>{{ highscore.score9 }}</td>
+</tr>
+<tr>
+    <td>10.</td>
+    <td>{{ highscore.username10 }}</td>
+    <td>{{ highscore.score10 }}</td>
+</tr>
+</table>
+{% endfor %}
+  <p><a href="/">Start menu</a></p>
+{% endblock %}

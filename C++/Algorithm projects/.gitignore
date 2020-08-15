@@ -1,0 +1,8 @@
+build
+*.o
+Course/
+CourseTests/
+debug/
+Makefile
+*.user
+

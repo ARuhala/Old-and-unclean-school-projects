@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Gamecatalog{% endblock %}
+
+
+{% block content %}
+<h2> Below you may find all the games avaiable for loan via our services</h2>
+<table>
+<tr>
+    <th>NAME</th>
+    <th>LOAN ID</th>
+    <th>PRICE</th>
+</tr>
+{% for game in games %}
+<tr>
+    <td>{{ game.name }}</td>
+    <td>{{ game.id }}</td>
+    <td>{{ game.price }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+
+<p> Your developer status is currently: {{ user.developerstatus }} </p>
+<p> Your gamer status is currently: {{ user.gamerstatus }} </p>
+
+{% if not user.developerstatus and not user.gamerstatus %}
+<p> ----- Starting options ----- </p>
+<p> To get started, please select a role for your visit </p>
+
+<p></p><a href="/setdeveloper/">Set Developer</a></p>
+<p></p><a href="/setgamer/">Set Gamer</a></p>
+
+
+<p> ---------------------------------- </p>
+{% endif %}
+
+
+  {% if user.developerstatus %}
+  <p> If you wish to toggle your user account between Gamer / Developer account, follow this link </p>
+  <p></p><a href="/togglestatus/">Set Account Status</a></p>
+
+  <p> ----- Developer options ----- </p>
+
+  <p><a href="/devaddgame/">Add game</a></p>
+  <p><a href="/devdelgame/">Remove game</a></p>
+  <p><a href="/devshowgames/">Game list</a></p>
+
+  <p> ---------------------------------- </p>
+
+  {% endif %}
+
+  {% if user.gamerstatus %}
+
+  <p> If you wish to toggle your user account between Gamer / Developer account, follow this link </p>
+  <p></p><a href="/togglestatus/">Set Account Status</a></p>
+
+  <p> ----- Gamer options ----- </p>
+
+  <p><a href="/loangame/">Loan a game</a></p>
+  <p><a href="/choosegame/">Play a game</a></p>
+
+
+  <p> ---------------------------------- </p>
+
+  {% endif %}
+
+  {% if user.gamerstatus %}
+
+  {% endif %}
+
+
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Login</a> |
+  <a href="{% url 'signup' %}">Sign up</a>
+{% endif %}
+
+<p></p><a href="/hc/">High scores</a></p>
+{% endblock %}

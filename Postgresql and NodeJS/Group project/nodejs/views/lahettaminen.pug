@@ -1,0 +1,57 @@
+html
+  head
+    title= title
+ 
+  body
+    h1= title
+  a(href="/") Linkki ekalle sivulle.
+
+  //- Print error message
+  if error  
+    p #{error}
+
+  //- Print the results as a html table by iterating the query results.
+  else if result 
+    br
+    p='LASKU ' + 'ERAPAIVA'
+    p='============='
+    p='------------------------------------------------------------------------'
+    p='Mainoskampanjan myyjä: '
+    p= mainoskampanjanmyyja
+    p='I-Flac Ltd.'
+    p='Musiikkikatu 3'
+    p='00140' + ' ' + 'Helsinki'
+    p='------------------------------------------------------------------------'
+    p='Mainoskampanjan tilaaja: '
+    p= mainoksenostaja
+    p= yrityksen_nimi
+    p= katuosoite
+    p= postinumero, 'KAUPUNKI'
+    p=''
+    p=''
+    p='Laskutettava mainoskampanja:'
+    p='------------------------------------------------------------------------'
+    p= kampanjanimijapvm
+    p='Sekuntihinta: ' + sekuntihinta + ' €/s'
+    p='Määrärahat: ' + maararaha + ' €'
+    p=''
+    p=''
+    p='Esitetyt mainokset: '
+    p='------------------------------------------------------------------------'
+    table
+      thead
+        tr
+          //- First print field names as table headers.
+          each field in result.fields
+            th: p= field.name
+      tbody
+        //- Then print values in the resulting rows.
+        each row in result.rows
+          tr
+            each value in row
+              td: p= value
+    p='------------------------------------------------------------------------'
+    p='Tilinumero: ' + tilinumero
+    p='Eräpäivä: ' + erapaiva
+    p='Viitenumero: ' + viitenumero
+    p='Loppusumma: ' + summa
