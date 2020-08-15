@@ -1,0 +1,11 @@
+﻿  skein.c
+D:\GitRepo\TIE-31106 Cryptography Engineering\TIE-31106-Cryptography-Engineering\assignment2_VisualStudio\Assignment2\skein.c(45,39): warning C4293: '>>': shift count negative or too big, undefined behavior
+D:\GitRepo\TIE-31106 Cryptography Engineering\TIE-31106-Cryptography-Engineering\assignment2_VisualStudio\Assignment2\skein.c(32,1): warning C4047: 'initializing': 'unsigned char *' differs in levels of indirection from 'const uint64_t (*)[4]'
+D:\GitRepo\TIE-31106 Cryptography Engineering\TIE-31106-Cryptography-Engineering\assignment2_VisualStudio\Assignment2\skein.c(48,1): warning C4047: 'initializing': 'unsigned char *' differs in levels of indirection from 'uint64_t (*)[2]'
+D:\GitRepo\TIE-31106 Cryptography Engineering\TIE-31106-Cryptography-Engineering\assignment2_VisualStudio\Assignment2\skein.c(138,41): warning C4293: '>>': shift count negative or too big, undefined behavior
+D:\GitRepo\TIE-31106 Cryptography Engineering\TIE-31106-Cryptography-Engineering\assignment2_VisualStudio\Assignment2\skein.c(180,15): warning C4047: '=': 'unsigned char *' differs in levels of indirection from 'uint64_t (*)[2]'
+D:\GitRepo\TIE-31106 Cryptography Engineering\TIE-31106-Cryptography-Engineering\assignment2_VisualStudio\Assignment2\skein.c(114,1): warning C4047: 'initializing': 'unsigned char *' differs in levels of indirection from 'const uint64_t (*)[4]'
+  skein_driver.c
+  Generating Code...
+D:\GitRepo\TIE-31106 Cryptography Engineering\TIE-31106-Cryptography-Engineering\assignment2_VisualStudio\Assignment2\skein.c(140,1): warning C4047: 'initializing': 'unsigned char *' differs in levels of indirection from 'uint64_t (*)[2]'
+  Assignment2.vcxproj -> D:\GitRepo\TIE-31106 Cryptography Engineering\TIE-31106-Cryptography-Engineering\assignment2_VisualStudio\Assignment2\Debug\Assignment2.exe
