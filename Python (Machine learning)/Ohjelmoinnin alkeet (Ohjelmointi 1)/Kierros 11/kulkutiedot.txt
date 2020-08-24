@@ -1,0 +1,6 @@
+987654;Ella Elektroniikkatutkija;S,TE,Y,TF,TG
+123456;Teemu Teekkari;Y
+H-293;Siiri Siivooja;R,S,T,F,K,P
+KK-23;Eino Erotettu;
+007;Tutkimusryhmä X;T
+B-0618;Olli Opettaja;TC,TE610,TF5,TF,TF6

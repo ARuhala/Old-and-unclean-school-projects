@@ -1,0 +1,13 @@
+      hiilta:puuta
+      rautaharkkoja:rautamalmia
+      lautaa:puuta
+      rautalapio:lapionvarsi
+      rautalapio:lautaa
+      rautalapio:rautaharkkoja
+      rautaharkkoja:hiilta
+      lapionvarsi:lautaa
+#kommentti
+    #komentttii
+
+
+

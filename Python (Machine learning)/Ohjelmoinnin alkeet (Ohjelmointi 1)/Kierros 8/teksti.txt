@@ -1,0 +1,6 @@
+K5705;Keijo Koneteekkari;0002
+TE210;Essi;3838
+TE212;aps;3804
+TE211;Jyke;3957
+TE208;Bitti;3825
+K5705;Teemu Teekkari;0001
